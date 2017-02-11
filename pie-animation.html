@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: relative;
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			background-color: yellowgreen;
+			background-image: linear-gradient(90deg, transparent 50%, #655 0);
+			animation: divChange 4s step-end infinite;
+		}
+		div::after{
+			content: '';
+			display: block;
+			height: 100%;
+			width: 50%;
+			position: absolute;
+			left: 50%;
+			border-radius: 0 100% 100% 0/50%;
+			background-color: inherit;
+			transform-origin: left;
+			will-change: transform;
+			animation: rotate 1s linear infinite, afterDivChange 4s step-end infinite;
+		}
+		@keyframes divChange{
+			50% {background-color: #655; background-image: linear-gradient(90deg, transparent 50%, yellowgreen 0);}
+		}
+		@keyframes rotate{
+			to {transform: rotate(.5turn);}
+		}
+		@keyframes afterDivChange{
+			25% {background-color: #655;}
+			75% {background-color: yellowgreen;}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</html>
