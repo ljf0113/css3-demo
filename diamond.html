@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<title>Document</title>
 	<style type="text/css">
-		body{
-			height: 100vh;
-			width: 100vw;
-			position: relative;
-			margin: 0;
+		*{
 			padding: 0;
+			margin: 0;
 		}
-		.box {
-		    width: 70%;
-		    height: 200px; line-height: 200px;
-		    padding: 10px; margin: 10px auto;
-		    background-color: #f0f3f9;
-		    resize: horizontal;
-		    overflow: hidden;
+		body{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
-		.fill-available {
-		    display: inline-block;
-		    line-height: 20px;
-		    padding: 20px;
-		    background-color: #cd0000;
-		    color: #fff;
-		    vertical-align: middle;
-		    
-		    width: -webkit-fill-available;
-		    width: -moz-fill-available;
-		    width: -moz-available;    /* FireFox目前这个生效 */
-		    width: fill-available;
+		img{
+			clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);0
+			will-change: clip-path;
+			transition: .5s clip-path;
+		}
+		img:hover{
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 		}
 	</style>
 </head>
 <body>
-	<div class="box">
-	    <p class="fill-available">
-	      width:fill-available可以让元素的宽度表现为默认的block水平元素的尺寸表现。<br>
-	      但这里实际上是display:inline-block水平的，<br>
-	      于是，我们可以保证宽度满尺寸自适应的同时使用line-height实现近似的垂直居中效果。
-	    </p>
-	</div>
+	<img src="1.jpg">
+</body>
 </html>
